@@ -1,2 +1,0 @@
-/config/workspace/src/authorization-code-flow/bin/Debug/net6.0/linux-arm64/publish/authorization-code-flow.pdb
-/config/workspace/src/authorization-code-flow/bin/Debug/net6.0/linux-arm64/publish/authorization-code-flow
