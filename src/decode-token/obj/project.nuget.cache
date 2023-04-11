@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dz8w6SP7CiQUZDKeWNRAuofyaaIX1h4Dgu9slDu1pn+HXEtrzDoLgs/jNFtdzMkeGER0yWDxhzeP4eZ9gfyIBQ==",
+  "success": true,
+  "projectFilePath": "/config/workspace/src/decode-token/decode-token.csproj",
+  "expectedPackageFiles": [
+    "/config/.nuget/packages/microsoft.netcore.app.runtime.linux-arm64/6.0.13/microsoft.netcore.app.runtime.linux-arm64.6.0.13.nupkg.sha512",
+    "/config/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-arm64/6.0.13/microsoft.aspnetcore.app.runtime.linux-arm64.6.0.13.nupkg.sha512",
+    "/config/.nuget/packages/microsoft.netcore.app.host.linux-arm64/6.0.13/microsoft.netcore.app.host.linux-arm64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

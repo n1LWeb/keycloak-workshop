@@ -1,0 +1,2 @@
+/config/workspace/src/password-grant/bin/Debug/net6.0/linux-arm64/publish/password-grant.pdb
+/config/workspace/src/password-grant/bin/Debug/net6.0/linux-arm64/publish/password-grant
