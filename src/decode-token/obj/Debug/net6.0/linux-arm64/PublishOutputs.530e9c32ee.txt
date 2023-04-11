@@ -1,2 +1,0 @@
-/config/workspace/src/decode-token/bin/Debug/net6.0/linux-arm64/publish/decode-token.pdb
-/config/workspace/src/decode-token/bin/Debug/net6.0/linux-arm64/publish/decode-token
