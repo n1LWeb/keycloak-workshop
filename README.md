@@ -1,6 +1,6 @@
 Aufgaben:
 
-1. Offne https://auth.mlu.dev.neo.onl/
+1. Offne den Aufruf auth im container auth
 
 2. Erstelle einen Client mit dem Namen: test
    - Client authentication: On
