@@ -28,8 +28,9 @@ authorization-code-flow.pdb: src/authorization-code-flow/bin/Debug/net6.0/linux-
 		cp src/authorization-code-flow/bin/Debug/net6.0/linux-arm64/publish/authorization-code-flow.pdb authorization-code-flow.pdb
 
 clean:
+	cd src/password-grant ; dotnet clean ; rm -r bin ; rm -r obj
+	cd src/decode-token ; dotnet clean ; rm -r bin ; rm -r obj
+	cd src/authorization-code-flow ; dotnet clean ; rm -r bin ; rm -r obj
 	rm password-grant password-grant.pdb decode-token decode-token.pdb authorization-code-flow authorization-code-flow.pdb
-	cd src/password-grant ; dotnet clean
-	cd src/decode-token ; dotnet clean
-	cd src/authorization-code-flow ; dotnet clean
+
 

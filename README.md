@@ -2,6 +2,8 @@ Aufgaben:
 
 1. Offne den Aufruf auth im container auth
 
+   Erstelle ein realm mit dem Namen Workshop
+
 2. Erstelle einen Client mit dem Namen: test
    - Client authentication: On
    - Standard flow: On
@@ -34,6 +36,8 @@ Aufgaben:
 
 12. Hole ein token mit ./authorization-code-flow
 
+13. Dekodiere das token mit ./decode-token idToken.txt
+
 ----
 
-13. Erstelle einen Mapper, der die Client Rollen in den Token einblendet.
+14. Erstelle einen Mapper, der die Client Rollen in den Token einblendet.

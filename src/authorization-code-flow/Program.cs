@@ -17,8 +17,9 @@ class Program
         var clientId = File.ReadAllLines(".env").First(l=>l.Contains("CLIENT_ID=")).Split('=')[1];
         var clientSecret = File.ReadAllLines(".env").First(l=>l.Contains("CLIENT_SECRET=")).Split('=')[1];
         var discoveryUrl = File.ReadAllLines(".env").First(l=>l.Contains("DISCOVERY_URL=")).Split('=')[1];
+        var authorizationEndpoint = File.ReadAllLines(".env").First(l=>l.Contains("AUTH_URL_EXT=")).Split('=')[1];
+        var redirectUri = File.ReadAllLines(".env").First(l=>l.Contains("REDIRECT_URI=")).Split('=')[1];
 
-        string redirectUri = "https://12345.code.mlu.dev.neo.onl/";
         string internalRedirectUri = "http://*:12345/";
         string scope = "openid profile roles";
         string responseType = "code";
@@ -28,7 +29,7 @@ class Program
         var discoveryResponse = await httpClient.GetAsync(discoveryUrl);
         var discoveryContent = await discoveryResponse.Content.ReadAsStringAsync();
         var discoveryData = JsonConvert.DeserializeObject<DiscoveryDocument>(discoveryContent);
-        string authorizationEndpoint = discoveryData.AuthorizationEndpoint;
+        //string authorizationEndpoint = discoveryData.AuthorizationEndpoint;
         string tokenEndpoint = discoveryData.TokenEndpoint;
 
         // Build the authorization request URL
@@ -54,18 +55,9 @@ class Program
             // Exchange the authorization code for an ID token and access token
             var (idToken, accessToken) = await ExchangeAuthorizationCodeForTokens(code, clientId, clientSecret, redirectUri, tokenEndpoint, scope);
 
-            // Verify the ID token signature and decode its payload
-            var idTokenPayload = DecodeAndVerifyIdToken(idToken);
-
-            // Print the ID token claims and access token
-            Console.WriteLine("ID token claims:");
-            foreach (var entry in idTokenPayload)
-            {
-                Console.WriteLine($"{entry.Key}: {entry.Value}");
-            }
-
             Console.WriteLine($"\nAccess token: {idToken}");
-
+            File.WriteAllText("idToken.txt", idToken);
+            
             // Send a response to the browser to close the window
             using (var writer = new StreamWriter(context.Response.OutputStream))
             {
@@ -122,6 +114,7 @@ class Program
         {
             base64 += '=';
         }
+
         byte[] bytes = Convert.FromBase64String(base64);
         return System.Text.Encoding.UTF8.GetString(bytes);
     }
